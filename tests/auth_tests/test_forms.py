@@ -1072,9 +1072,7 @@ class UserChangeFormTest(TestDataMixin, TestCase):
                 "Set password",
             ),
         ]
-        password_reset_link = (
-            r'<a class="button" role="button" href="([^"]*)">([^<]*)</a>'
-        )
+        password_reset_link = r'<a class="button" href="([^"]*)">([^<]*)</a>'
         for username, expected_help_text, expected_button_label in cases:
             with self.subTest(username=username):
                 user = User.objects.get(username=username)
@@ -1423,8 +1421,7 @@ class ReadOnlyPasswordHashTest(SimpleTestCase):
             "    <strong>hash</strong>: "
             "       <bdi>WmCkn9**************************************</bdi>"
             "  </p>"
-            '  <p><a class="button" role="button" href="../password/">'
-            "Reset password</a></p>"
+            '  <p><a class="button" href="../password/">Reset password</a></p>'
             "</div>",
         )
 
