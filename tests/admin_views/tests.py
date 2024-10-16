@@ -8292,8 +8292,7 @@ class AdminKeepChangeListFiltersTests(TestCase):
 
         # Check the delete link.
         delete_link = re.search(
-            '<a href="(.*?)" class="deletelink" role="button">Delete</a>',
-            response.content.decode(),
+            '<a href="(.*?)" class="deletelink">Delete</a>', response.content.decode()
         )
         self.assertURLEqual(delete_link[1], self.get_delete_url())
 
